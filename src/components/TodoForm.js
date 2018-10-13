@@ -4,9 +4,12 @@ import styled from "styled-components";
 const MyForm = styled.form`
   border: 1px solid black;
   background-color: gray;
+width: 800px
   display: flex;
   flex-direction: column;
   align-items: center;
+border-radius: 0 0 10px 10px;
+margin: 0 auto;
 `;
 
 const MyInput = styled.input`
