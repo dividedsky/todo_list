@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 
 const StyledTodoListContainer = styled.div`
   width: 800px;
-  height: 200px;
   border: 1px solid gray;
+  min-height: 200px;
   margin: 20px auto 0;
   background-color: lightblue;
 

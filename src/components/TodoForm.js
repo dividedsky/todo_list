@@ -23,6 +23,7 @@ padding: 20px 10px;
 vertical-align: center;
 font-size: 16px;
 margin: 10px 0;
+width: 200px;
 
 &:hover {
 background: green;
@@ -31,6 +32,12 @@ color: white;
 `;
 
 const TodoForm = props => {
+  let btnText;
+  if (props.showCompleted) {
+    btnText = "Show Tasks";
+  } else {
+    btnText = "Show Completed";
+  }
   return (
     <MyForm onSubmit={props.addItem}>
       <MyInput
@@ -40,7 +47,7 @@ const TodoForm = props => {
         onChange={props.updateText}
       />
       <MyButton onClick={props.clearCompleted}>Clear Completed</MyButton>
-      <MyButton onClick={props.toggleShowCompleted}>Show Completed</MyButton>
+      <MyButton onClick={props.toggleShowCompleted}>{btnText}</MyButton>
       <label for="colorSelect">Change background color</label>
       <input name="colorSelect" type="color" onChange={props.changeColor} />
     </MyForm>

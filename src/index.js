@@ -5,10 +5,6 @@ import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import "./styles.css";
 
-// todolist
-// todo
-// todo form
-
 // local storage - done
 // save completed todos - done
 // show completed todos on button press - done
@@ -158,6 +154,7 @@ class App extends React.Component {
           clearCompleted={this.clearCompleted}
           changeColor={this.changeColor}
           toggleShowCompleted={this.toggleShowCompleted}
+          showCompleted={this.state.showCompleted}
         />
       </div>
     );
