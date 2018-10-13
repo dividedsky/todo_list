@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { todoData } from "./todoData";
+// import { todoData } from "./todoData";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import "./styles.css";
@@ -87,8 +87,6 @@ class App extends React.Component {
       this.setState({
         todoList: JSON.parse(localStorage.getItem("todoData"))
       });
-    } else {
-      this.setState({ todoList: todoData });
     }
 
     if (localStorage.getItem("completed")) {
