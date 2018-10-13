@@ -11,13 +11,14 @@ import "./styles.css";
 
 // local storage - done
 // save completed todos - done
-// show completed todos on button press
+// show completed todos on button press - done
 // sub-items - main todo complete if all subs complete
-// color changer
+// color changer - done
 // no empty strings when adding todo - done
 // clear completed - done
 // login, display per-user todo list
 // make it not look terrible
+// toggle completed on completed list
 
 class App extends React.Component {
   constructor() {
@@ -26,7 +27,8 @@ class App extends React.Component {
       todoList: [],
       completedTodos: [],
       newTodoText: "",
-      color: "green"
+      color: "green",
+      showCompleted: false
     };
   }
 
@@ -51,6 +53,10 @@ class App extends React.Component {
       });
       this.setState({ newTodoText: "" });
     }
+  };
+
+  toggleShowCompleted = e => {
+    this.setState({ showCompleted: !this.state.showCompleted });
   };
 
   toggleCompleted = e => {
@@ -136,7 +142,11 @@ class App extends React.Component {
         <h1>J's Fabulous Todo List</h1>
 
         <TodoList
-          todos={this.state.todoList}
+          todos={
+            this.state.showCompleted
+              ? this.state.completedTodos
+              : this.state.todoList
+          }
           toggle={this.toggleCompleted}
           color={this.state.color}
         />
@@ -147,6 +157,7 @@ class App extends React.Component {
           addItem={this.addItem}
           clearCompleted={this.clearCompleted}
           changeColor={this.changeColor}
+          toggleShowCompleted={this.toggleShowCompleted}
         />
       </div>
     );
