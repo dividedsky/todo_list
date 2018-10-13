@@ -22,7 +22,6 @@ import "./styles.css";
 class App extends React.Component {
   constructor() {
     super();
-    console.log("constructor running");
     this.state = {
       todoList: [],
       completedTodos: [],
@@ -67,7 +66,6 @@ class App extends React.Component {
   };
 
   clearCompleted = e => {
-    console.log("click");
     const newCompletedArr = this.state.completedTodos;
     this.state.todoList.forEach(t => {
       if (t.completed) {
@@ -83,8 +81,6 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log("Component Did Mount Starting");
-    console.log(localStorage.getItem("completed"));
     if (localStorage.getItem("todoData")) {
       this.setState({
         todoList: JSON.parse(localStorage.getItem("todoData"))
@@ -94,7 +90,6 @@ class App extends React.Component {
     }
 
     if (localStorage.getItem("completed")) {
-      console.log("loading completed: ", localStorage.getItem("completed"));
       this.setState({
         completedTodos: JSON.parse(localStorage.getItem("completed"))
       });
@@ -103,11 +98,9 @@ class App extends React.Component {
     if (localStorage.getItem("color")) {
       this.setState({ color: localStorage.getItem("color") });
     }
-    console.log("component did mount completed");
   }
 
   componentWillUnmount() {
-    console.log("Component Will Unmount");
     localStorage.setItem(
       "completed",
       JSON.stringify(this.state.completedTodos)
@@ -116,11 +109,9 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Component Did Update");
     if (
       JSON.stringify(this.state.todoList) !== localStorage.getItem("todoData")
     ) {
-      console.log("CDU");
       localStorage.setItem("todoData", JSON.stringify(this.state.todoList));
     }
 
@@ -128,8 +119,6 @@ class App extends React.Component {
       JSON.stringify(this.state.completedTodos) !==
       localStorage.getItem("completed")
     ) {
-      console.log("update completed");
-      console.log("local storage:", localStorage.getItem("completed"));
       localStorage.setItem(
         "completed",
         JSON.stringify(this.state.completedTodos)
@@ -142,7 +131,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log("Render is running");
     return (
       <div className="App">
         <h1>J's Fabulous Todo List</h1>
