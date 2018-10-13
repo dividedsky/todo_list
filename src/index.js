@@ -144,7 +144,7 @@ class App extends React.Component {
     console.log("Render is running");
     return (
       <div className="App">
-        <h1>Justin's Fabulous Todo List</h1>
+        <h1>J's Fabulous Todo List</h1>
 
         <TodoList
           todos={this.state.todoList}
