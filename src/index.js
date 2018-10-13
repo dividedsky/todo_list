@@ -23,7 +23,7 @@ class App extends React.Component {
       todoList: [],
       completedTodos: [],
       newTodoText: "",
-      color: "green",
+      color: "#3c4089",
       showCompleted: false
     };
   }
