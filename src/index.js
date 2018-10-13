@@ -17,6 +17,7 @@ import "./styles.css";
 // no empty strings when adding todo - done
 // clear completed - done
 // login, display per-user todo list
+// make it not look terrible
 
 class App extends React.Component {
   constructor() {
